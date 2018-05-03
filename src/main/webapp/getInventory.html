@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ItemService SOAP sample application</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" href="style.css" />
+</head>
+
+<script type="text/javascript" >
+	function getInventory() {
+		var xmlhttp = new XMLHttpRequest();
+		xmlhttp.open("POST", "http://soapsample.mybluemix.net/ItemService", true);
+		
+		// Sample SOAP request message
+		var request =
+		    "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"no\"?>" +
+                "<soapenv:Envelope " + 
+                    "xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" " +
+                    "xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" " +
+                    "xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" " +
+                    "xmlns:tns=\"http://soapsample.training.ibm.com/\">" +
+                    "<soapenv:Body>" +
+                    	"<tns:getInventory></tns:getInventory>" +
+                    "</soapenv:Body>" +
+                "</soapenv:Envelope>";
+               
+        // Event handler to output SOAP response message
+        xmlhttp.onreadystatechange = function () {
+        	if (xmlhttp.readyState == 4) {
+        		document.getElementById("status").innerHTML = xmlhttp.status;
+        		if (xmlhttp.status == 200) {
+        			document.getElementById("result").innerHTML = xmlhttp.responseText;
+        		}
+        	}
+		};
+
+		// Set headers and send SOAP request message
+		xmlhttp.setRequestHeader("Content-Type", "text/xml");
+		xmlhttp.send(request);
+		document.getElementById("request").innerHTML = request;
+	}
+	
+	// Make SOAP request after this page loads
+	window.onload=getInventory;
+</script>
+
+
+<body>
+	<table>
+		<tr>
+			<td>
+				<h1 id = "message">ItemService SOAP API Sample</h1>
+				<p>This test client invokes the getInventory operation from the SOAP service.</p>
+				<h4>SOAP request:</h4>
+				<textarea id = "request" cols="80" rows = "6">Loading...</textarea>
+				<h4>SOAP response:</h4>
+				<p>HTTP status code <span id = "status"></span></p>
+				<textarea id = "result" cols="80" rows="20">Loading...</textarea>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

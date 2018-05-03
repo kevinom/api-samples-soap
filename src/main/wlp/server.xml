@@ -1,0 +1,17 @@
+<server>
+    <featureManager>
+        <feature>servlet-3.0</feature>
+        <feature>jaxrs-2.0</feature>
+        <feature>jaxws-2.2</feature>
+        <feature>jaxb-2.2</feature>
+    </featureManager>
+
+    <httpEndpoint id="defaultHttpEndpoint"
+                  host="*"
+                  httpPort="${port}">
+        <tcpOptions soReuseAddr="true"/>
+    </httpEndpoint>
+
+    <application name="SOAPSample" context-root="/" location="${appLocation}" type="war"/>
+
+</server>
