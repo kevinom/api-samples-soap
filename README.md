@@ -1,6 +1,6 @@
 #  api-samples-soap
 ## SOAP API example built for Liberty Java buildpack on IBM Cloud 
-#####  8 May 2018 - warrenf
+#####  3 May 2018 - warrenf
 
 This sample application returns a list of inventory items from a SOAP API. The application is a Java EE 7 Web application with JAX-WS, JAX-RS, and JAXB features.
 
