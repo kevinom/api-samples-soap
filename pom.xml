@@ -15,7 +15,7 @@
     <packaging>war</packaging>
 
     <name>Item Service SOAP API sample</name>
-    <url>https://github.com/wrrnf/api-samples-soap/</url>
+    <url>https://github.com/kevinom/api-samples-soap/</url>
 
     <licenses>
         <license>
