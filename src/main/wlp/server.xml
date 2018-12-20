@@ -12,6 +12,6 @@
         <tcpOptions soReuseAddr="true"/>
     </httpEndpoint>
 
-    <application name="SOAPSample" context-root="/" location="${appLocation}" type="war"/>
+    <application name="soapsample" context-root="/" location="${appLocation}" type="war"/>
 
 </server>
