@@ -5,3 +5,5 @@ applications:
    path: target/ItemServiceApp.war
    memory: 512M
    instances: 1
+env:
+ JBP_CONFIG_LIBERTY: "app_archive: {features: [servlet-3.1, jaxrs-2.0, jaxws-2.2, jaxb-2.2, appstate-2.0]}"   
