@@ -1,7 +1,7 @@
 ---
 applications:
  - name: ItemServiceApp
-   random-route: true
+   random-route: false
    path: target/ItemServiceApp.war
    memory: 512M
    instances: 1
